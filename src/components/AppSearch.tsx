@@ -13,7 +13,7 @@ import {
 
 import { Svgs } from 'assets'
 import { styles } from 'theme'
-import { searchItems } from 'config/data'
+import { tags } from 'config/data'
 
 const AppSearch: React.FC = () => {
   return (
@@ -40,7 +40,7 @@ const AppSearch: React.FC = () => {
         </InputGroup>
       </SimpleGrid>
       <Wrap spacing='10px' align='center'>
-        {searchItems.map((item) => (
+        {tags.map((item) => (
           <WrapItem>
             <Center
               p={'2px'}
