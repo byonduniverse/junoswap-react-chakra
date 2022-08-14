@@ -12,8 +12,8 @@ const CarouselSlide: React.FC<Props> = ({ slides }) => {
     <>
       <Provider>
         <Carousel gap={10}>
-          {slides.map((slide) => {
-            return <Image key={slide.image} src={slide.image} height='auto' />
+          {slides.map((slide, index) => {
+            return <Image key={index} src={slide.image} height='auto' />
           })}
         </Carousel>
         <LeftButton />

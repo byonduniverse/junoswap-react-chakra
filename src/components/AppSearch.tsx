@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
   Heading,
   Flex,
@@ -12,10 +12,12 @@ import {
 } from '@chakra-ui/react'
 
 import { Svgs } from 'assets'
-import { styles } from 'themes'
+import { ThemeContext } from 'ThemeContext'
 import { tags } from 'config/data'
 
 const AppSearch: React.FC = () => {
+  const { styles } = useContext(ThemeContext)
+
   return (
     <Flex direction='column'>
       <SimpleGrid columns={[2, null, 1]}>
@@ -40,8 +42,8 @@ const AppSearch: React.FC = () => {
         </InputGroup>
       </SimpleGrid>
       <Wrap spacing='10px' align='center'>
-        {tags.map((item) => (
-          <WrapItem>
+        {tags.map((item, index) => (
+          <WrapItem key={index}>
             <Center
               p={'2px'}
               pl={2}

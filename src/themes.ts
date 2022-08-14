@@ -1,4 +1,3 @@
-import React from 'react'
 import { extendTheme } from '@chakra-ui/react'
 
 export const styles = {
@@ -51,7 +50,5 @@ const theme = extendTheme({
     },
   },
 })
-
-export const ThemeContext = React.createContext(styles)
 
 export default theme
