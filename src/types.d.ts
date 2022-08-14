@@ -8,3 +8,10 @@ interface AppItem {
   category: string
   color: string
 }
+
+interface Step {
+  index: number
+  title: string
+  description: string
+  content: string[]
+}
