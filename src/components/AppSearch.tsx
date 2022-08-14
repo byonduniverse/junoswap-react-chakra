@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 
 import { Svgs } from 'assets'
-import { styles } from 'theme'
+import { styles } from 'themes'
 import { tags } from 'config/data'
 
 const AppSearch: React.FC = () => {

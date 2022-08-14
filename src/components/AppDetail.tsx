@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react'
 
 import LinkBtn from './LinkBtn'
-import { styles } from 'theme'
+import { styles } from 'themes'
 
 interface Props {
   category: string

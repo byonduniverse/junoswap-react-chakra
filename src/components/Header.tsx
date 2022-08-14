@@ -17,7 +17,7 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 
-import { styles } from 'theme'
+import { styles } from 'themes'
 
 interface DrawerProps {
   isOpen: boolean

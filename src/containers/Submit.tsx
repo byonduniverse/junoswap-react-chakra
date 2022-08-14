@@ -2,7 +2,7 @@ import React from 'react'
 import { Heading, Box, Text } from '@chakra-ui/react'
 
 import SubmitStep from 'components/SubmitStep'
-import { styles } from 'theme'
+import { styles } from 'themes'
 import { steps } from 'config/data'
 
 const Submit: React.FC = () => {

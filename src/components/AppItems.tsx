@@ -9,7 +9,7 @@ import {
   useDimensions,
 } from '@chakra-ui/react'
 import { useRef } from 'react'
-import { styles } from 'theme'
+import { styles } from 'themes'
 
 interface Props {
   apps: AppItem[]

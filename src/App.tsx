@@ -3,7 +3,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import AppRoutes from './routes'
 import Layout from './components/Layout'
 
-import theme from 'theme'
+import theme from 'themes'
 
 export const App = () => (
   <ChakraProvider theme={theme}>

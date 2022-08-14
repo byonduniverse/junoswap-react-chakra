@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
 
 import {
@@ -7,14 +7,13 @@ import {
   Box,
   Heading,
   Flex,
-  useDimensions,
   Wrap,
   WrapItem,
 } from '@chakra-ui/react'
 
 import AppDetail from 'components/AppDetail'
 import LinkBtn from 'components/LinkBtn'
-import { styles } from 'theme'
+import { styles } from 'themes'
 import { apps, tags } from 'config/data'
 
 const text = `JunoCasino is a permissinless casino built on the Juno Network that
@@ -30,12 +29,11 @@ their project and what the purpose is.`
 
 const AppPage: React.FC = () => {
   const params = useParams()
-  const elementRef = useRef<HTMLDivElement>(null)
   const app = apps[parseInt(params?.appId || '1')]
 
   return (
     <Grid templateColumns='repeat(3, 1fr)' mt={10} gap={8}>
-      <GridItem colSpan={[3, null, 2]} ref={elementRef}>
+      <GridItem colSpan={[3, null, 2]}>
         <AppDetail
           category={app.category}
           color={app.color}

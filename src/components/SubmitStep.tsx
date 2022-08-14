@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Flex, Heading, Box, Text, SimpleGrid, Hide } from '@chakra-ui/react'
-import { styles } from 'theme'
+import { styles } from 'themes'
 
 interface Props {
   steps: Step[]

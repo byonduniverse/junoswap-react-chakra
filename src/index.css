@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
+
+.body {
+  font-family: 'Inter' !important;
+  font-style: normal;
+}
+
 .chakra-ui-dark {
   --chakra-colors-chakra-body-bg: #000000
 }

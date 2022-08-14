@@ -3,7 +3,7 @@ import { Flex, Input, Button, Box } from '@chakra-ui/react'
 
 import AppItems from './AppItems'
 import { Svgs } from 'assets'
-import { styles } from 'theme'
+import { styles } from 'themes'
 import { apps } from 'config/data'
 
 const AppBoard: React.FC = () => {
