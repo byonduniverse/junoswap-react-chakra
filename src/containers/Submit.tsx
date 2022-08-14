@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Heading, Box, Text } from '@chakra-ui/react'
 
 import SubmitStep from 'components/SubmitStep'
-import { styles } from 'theme'
 import { steps } from 'config/data'
+import { ThemeContext } from 'ThemeContext'
 
 const Submit: React.FC = () => {
+  const { styles } = useContext(ThemeContext)
+
   return (
     <Box mt='40px'>
       <Heading

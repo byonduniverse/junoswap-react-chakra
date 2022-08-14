@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 
 import {
@@ -7,35 +7,23 @@ import {
   Box,
   Heading,
   Flex,
-  useDimensions,
   Wrap,
   WrapItem,
 } from '@chakra-ui/react'
 
 import AppDetail from 'components/AppDetail'
 import LinkBtn from 'components/LinkBtn'
-import { styles } from 'theme'
-import { apps, tags } from 'config/data'
-
-const text = `JunoCasino is a permissinless casino built on the Juno Network that
-prioritise the ability for users to bet on various positions. By
-offering both liquidity markets and north-delegation pools, JunoCasino
-bridges the gap for medium-sized alpha markets that still base the
-consumer. It’s almost like Las Vegas when you think about it. Perhaps
-Montengro, I don’t really know that many gambling capitals of the
-world. This text is really just placeholder, and I’d be impressed if
-you read this far into it. Each project will be required to submit a
-medium-length description, no more than 1200 characters, describing
-their project and what the purpose is.`
+import { ThemeContext } from 'ThemeContext'
+import { apps, tags, text } from 'config/data'
 
 const AppPage: React.FC = () => {
   const params = useParams()
-  const elementRef = useRef<HTMLDivElement>(null)
   const app = apps[parseInt(params?.appId || '1')]
+  const { styles } = useContext(ThemeContext)
 
   return (
     <Grid templateColumns='repeat(3, 1fr)' mt={10} gap={8}>
-      <GridItem colSpan={[3, null, 2]} ref={elementRef}>
+      <GridItem colSpan={[3, null, 2]}>
         <AppDetail
           category={app.category}
           color={app.color}
@@ -43,8 +31,8 @@ const AppPage: React.FC = () => {
         ></AppDetail>
       </GridItem>
       <GridItem colSpan={[3, null, 1]}>
-        <Box p={5} mb={8} bg={styles.color.dark} borderRadius={20}>
-          <Heading mb={1} fontSize={styles.fonts.header.fontSize}>
+        <Box p={5} mb={8} bg={styles?.color.dark} borderRadius={20}>
+          <Heading mb={1} fontSize={styles?.fonts.header.fontSize}>
             Token
           </Heading>
           <LinkBtn
@@ -109,9 +97,9 @@ const AppPage: React.FC = () => {
             Tags
           </Heading>
           <Wrap>
-            {tags.map((tag) => {
+            {tags.map((tag, index) => {
               return (
-                <WrapItem>
+                <WrapItem key={index}>
                   <LinkBtn
                     text={tag.text}
                     size={styles.fonts.content.fontSize}

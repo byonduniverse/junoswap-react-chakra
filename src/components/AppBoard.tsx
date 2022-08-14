@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Flex, Input, Button, Box } from '@chakra-ui/react'
 
 import AppItems from './AppItems'
 import { Svgs } from 'assets'
-import { styles } from 'theme'
 import { apps } from 'config/data'
+import { ThemeContext } from 'ThemeContext'
 
 const AppBoard: React.FC = () => {
+  const { styles } = useContext(ThemeContext)
+
   return (
     <Box>
       <Flex mb='40px'>

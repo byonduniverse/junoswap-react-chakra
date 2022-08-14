@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Flex, Heading, Box, Text, SimpleGrid, Hide } from '@chakra-ui/react'
-import { styles } from 'theme'
+import { ThemeContext } from 'ThemeContext'
 
 interface Props {
   steps: Step[]
@@ -12,12 +12,13 @@ const createMarkup = (str: string) => {
 
 const SubmitStep: React.FC<Props> = ({ steps }) => {
   const [select, setSelect] = useState(0)
+  const { styles } = useContext(ThemeContext)
 
   return (
     <>
       {steps.map((step) => {
         return (
-          <SimpleGrid columns={[1, null, 2]} key={step.index} spacing={100}>
+          <SimpleGrid key={step.index} columns={[1, null, 2]} spacing={100}>
             <Box
               minH={['100px', null, '200px']}
               cursor='pointer'
@@ -59,8 +60,8 @@ const SubmitStep: React.FC<Props> = ({ steps }) => {
                 p={5}
                 display={select !== step.index - 1 ? 'none' : ''}
               >
-                {step.content.map((item) => (
-                  <Text fontSize='14px' fontWeight={400}>
+                {step.content.map((item, index) => (
+                  <Text key={index} fontSize='14px' fontWeight={400}>
                     {item}
                   </Text>
                 ))}

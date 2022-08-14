@@ -1,8 +1,6 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useContext } from 'react'
 import {
   Flex,
-  Box,
   Text,
   Spacer,
   Button,
@@ -16,8 +14,7 @@ import {
   Link,
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
-
-import { styles } from 'theme'
+import { ThemeContext } from 'ThemeContext'
 
 interface DrawerProps {
   isOpen: boolean
@@ -43,6 +40,7 @@ const DrawerNav: React.FC<DrawerProps> = ({ isOpen, onClose }) => {
 
 const Header: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const { styles } = useContext(ThemeContext)
 
   return (
     <Flex alignItems='center' gap={2}>

@@ -1,4 +1,4 @@
-export const apps = [
+export const apps: AppItem[] = [
   {
     id: 1,
     title: '(de)NS',
@@ -31,7 +31,18 @@ export const apps = [
   },
 ]
 
-export const tags = [
+export const text = `JunoCasino is a permissinless casino built on the Juno Network that
+prioritise the ability for users to bet on various positions. By
+offering both liquidity markets and north-delegation pools, JunoCasino
+bridges the gap for medium-sized alpha markets that still base the
+consumer. It’s almost like Las Vegas when you think about it. Perhaps
+Montengro, I don’t really know that many gambling capitals of the
+world. This text is really just placeholder, and I’d be impressed if
+you read this far into it. Each project will be required to submit a
+medium-length description, no more than 1200 characters, describing
+their project and what the purpose is.`
+
+export const tags: Tag[] = [
   {
     text: 'defi protocols',
     color: 'rgba(240, 130, 125, 0.2)',

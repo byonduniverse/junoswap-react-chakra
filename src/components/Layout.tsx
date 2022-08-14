@@ -2,6 +2,8 @@ import React, { ReactNode } from 'react'
 import { Container } from '@chakra-ui/react'
 
 import Header from './Header'
+import { ThemeContext } from '../ThemeContext'
+import { styles } from 'themes'
 
 interface Props {
   children: ReactNode
@@ -9,10 +11,12 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ children }) => {
   return (
-    <Container maxW='1200px' color='white'>
-      <Header></Header>
-      {children}
-    </Container>
+    <ThemeContext.Provider value={{ styles }}>
+      <Container maxW='1200px' color='white'>
+        <Header></Header>
+        {children}
+      </Container>
+    </ThemeContext.Provider>
   )
 }
 

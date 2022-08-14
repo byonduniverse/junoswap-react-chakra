@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useContext } from 'react'
 import {
   Box,
   Flex,
@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react'
 
 import LinkBtn from './LinkBtn'
-import { styles } from 'theme'
+import { ThemeContext } from 'ThemeContext'
 
 interface Props {
   category: string
@@ -20,6 +20,7 @@ interface Props {
 const AppDetail: React.FC<Props> = ({ category, color, text }) => {
   const elementRef = useRef<HTMLDivElement>(null)
   const dimensions = useDimensions(elementRef, true)
+  const { styles } = useContext(ThemeContext)
 
   return (
     <>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
   Text,
@@ -9,13 +9,14 @@ import {
   useDimensions,
 } from '@chakra-ui/react'
 import { useRef } from 'react'
-import { styles } from 'theme'
+import { ThemeContext } from 'ThemeContext'
 
 interface Props {
   apps: AppItem[]
 }
 
 const AppItems: React.FC<Props> = ({ apps }) => {
+  const { styles } = useContext(ThemeContext)
   const navigate = useNavigate()
   const elementRef = useRef<HTMLDivElement>(null)
   const dimensions = useDimensions(elementRef, true)
@@ -24,6 +25,7 @@ const AppItems: React.FC<Props> = ({ apps }) => {
     <SimpleGrid columns={[2, null, 3]} spacing={10} minBlockSize='sm'>
       {apps?.map((app) => (
         <Box
+          key={app.id}
           ref={elementRef}
           cursor='pointer'
           onClick={() => {
