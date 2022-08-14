@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import {
   Flex,
   Box,
@@ -45,14 +46,14 @@ const Header: React.FC = () => {
 
   return (
     <Flex alignItems='center' gap={2}>
-      <Box p={2}>
-        <Heading size='md' fontSize='1.5rem'>
+      <Link p={2} cursor='pointer' href='/'>
+        <Heading size='md' fontSize='1.5rem' color='white'>
           App Store
         </Heading>
         <Text pt={1} fontSize='14px' color='tomato' fontWeight='bold'>
           BUILT BY JUNO
         </Text>
-      </Box>
+      </Link>
       <Spacer />
       <Show breakpoint='(min-width: 600px)'>
         <Link pr={10} href='/'>
